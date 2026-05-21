@@ -51,7 +51,7 @@ Name: ${name}
 Phone: ${phone}
 Sport: ${sport}`;
 
-  const whatsappNumber = "919746906878";
+  const whatsappNumber = "9746906878";
 
   const whatsappURL =
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
