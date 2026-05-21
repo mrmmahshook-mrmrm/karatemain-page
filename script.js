@@ -41,9 +41,10 @@ document.addEventListener('keydown', function(e) {
 function sendToWhatsApp(event) {
   event.preventDefault();
 
-  const name  = document.getElementById("d-name").value;
-  const phone = document.getElementById("d-phone").value;
-  const sport = document.getElementById("d-sport").value;
+  const form = event.target;
+  const name  = form.querySelector('[id$="name"]').value;
+  const phone = form.querySelector('[id$="phone"]').value;
+  const sport = form.querySelector('[id$="sport"]').value;
 
   const message =
 `New Registration:
@@ -52,9 +53,6 @@ Phone: ${phone}
 Sport: ${sport}`;
 
   const whatsappNumber = "919061750885";
-
-  const whatsappURL =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   window.location.href = whatsappURL;
 }
