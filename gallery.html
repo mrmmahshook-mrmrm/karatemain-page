@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Gallery — Malabar Martial & Sport Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:       #A79277;
+    --gold-light: #C4A882;
+    --gold-dark:  #8B7355;
+    --accent:     #D4956A;
+    --bg:         #1A0F08;
+    --bg-card:    #2E1F12;
+    --bg-raised:  #241810;
+    --warm:       #FFF2E1;
+    --muted:      #B89E87;
+    --dim:        #6B4E35;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Barlow',sans-serif;
+    background:var(--bg);
+    color:var(--warm);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position:sticky; top:0; z-index:50;
+    background:rgba(26,15,8,0.97);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(167,146,119,0.2);
+    padding:0 1rem; height:56px;
+    display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+  }
+  .header-back {
+    display:flex; align-items:center; gap:.5rem;
+    text-decoration:none; color:var(--muted);
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.78rem; letter-spacing:2px; text-transform:uppercase;
+    transition:color .2s; flex-shrink:0;
+  }
+  .header-back:active { color:var(--warm); }
+  .header-back svg { width:16px; height:16px; }
+  .header-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.15rem; letter-spacing:2px;
+    color:var(--warm); text-align:center; flex:1;
+  }
+  .header-title span { color:var(--gold); }
+
+  /* ── HERO STRIP ── */
+  .hero-strip {
+    background:linear-gradient(135deg,var(--bg-raised) 0%,var(--bg) 100%);
+    border-bottom:1px solid rgba(167,146,119,0.12);
+    padding:1.4rem 1.2rem 1.2rem;
+    display:flex; align-items:center; gap:1rem;
+    position:relative; overflow:hidden;
+  }
+  .hero-strip::before {
+    content:'GALLERY';
+    position:absolute; right:-.5rem; top:50%;
+    transform:translateY(-50%);
+    font-family:'Bebas Neue',sans-serif;
+    font-size:4.5rem; color:rgba(167,146,119,0.05);
+    line-height:1; pointer-events:none; letter-spacing:4px;
+  }
+  .hero-belt {
+    width:4px; height:52px;
+    background:linear-gradient(to bottom,var(--accent),var(--gold-dark));
+    border-radius:2px; flex-shrink:0;
+  }
+  .hero-label {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.65rem; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:.3rem;
+    display:flex; align-items:center; gap:6px;
+  }
+  .hero-label::before {
+    content:''; display:inline-block;
+    width:18px; height:1.5px; background:var(--gold);
+  }
+  .hero-heading {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.6rem; letter-spacing:1.5px; line-height:1; color:var(--warm);
+  }
+  .hero-sub { font-size:.78rem; color:var(--muted); margin-top:.3rem; font-weight:300; }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    display:flex; align-items:center; gap:.75rem;
+    padding:1.4rem 1.2rem .9rem;
+    border-bottom:1px solid rgba(167,146,119,0.1);
+  }
+  .section-icon {
+    width:34px; height:34px; border-radius:8px;
+    background:rgba(167,146,119,0.12);
+    border:1px solid rgba(167,146,119,0.25);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1rem; flex-shrink:0;
+  }
+  .section-label {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.6rem; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:.15rem;
+  }
+  .section-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.25rem; letter-spacing:2px; color:var(--warm); line-height:1;
+  }
+  .section-count {
+    margin-left:auto; flex-shrink:0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.68rem; letter-spacing:1.5px; color:var(--dim); text-transform:uppercase;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    height:6px;
+    background:linear-gradient(to right, var(--accent), var(--gold-dark), transparent);
+    opacity:.35;
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 1 — BLACK BELTS
+  ───────────────────────────────────────── */
+  .bb-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    padding:2px;
+  }
+  .bb-tile {
+    display:flex; flex-direction:column;
+    cursor:pointer;
+    background:var(--bg-card);
+  }
+  .bb-photo {
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+  }
+  .bb-photo img {
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+    transition:transform .35s ease;
+  }
+  .bb-tile:active .bb-photo img { transform:scale(1.05); }
+  .bb-dan-badge {
+    position:absolute; top:4px; right:4px;
+    background:rgba(26,15,8,0.82);
+    border:1px solid rgba(167,146,119,0.45);
+    border-radius:4px;
+    padding:2px 5px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.58rem; letter-spacing:1px;
+    color:var(--gold-light); text-transform:uppercase;
+    pointer-events:none;
+  }
+  .bb-name-bar {
+    padding:.3rem .3rem .15rem;
+    background:var(--bg-raised);
+    border-top:1px solid rgba(167,146,119,0.08);
+    text-align:center;
+  }
+  .bb-name-bar .name {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.75rem; font-weight:600; letter-spacing:.5px;
+    color:var(--warm);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;
+  }
+  .bb-name-bar .caption {
+    font-size:.62rem; color:var(--dim);
+    font-weight:300; letter-spacing:.3px;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;
+    padding-bottom:.25rem;
+    font-style:italic;
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 2 — STUDENT ACHIEVEMENTS
+  ───────────────────────────────────────── */
+  .achievements-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    padding:10px;
+  }
+  .ach-card {
+    background:var(--bg-card);
+    border:1px solid rgba(167,146,119,0.12);
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    display:flex; flex-direction:column;
+    transition:border-color .2s;
+  }
+  .ach-card:active { border-color:rgba(167,146,119,0.35); }
+  .ach-photo {
+    aspect-ratio:4/3;
+    overflow:hidden; position:relative;
+  }
+  .ach-photo img {
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+    transition:transform .35s ease;
+  }
+  .ach-card:active .ach-photo img { transform:scale(1.04); }
+  .ach-badge {
+    position:absolute; top:6px; left:6px;
+    background:rgba(212,149,106,0.9);
+    border-radius:4px;
+    padding:2px 7px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.58rem; letter-spacing:1.5px; text-transform:uppercase;
+    color:#1A0F08; font-weight:700;
+    pointer-events:none;
+  }
+  .ach-info {
+    padding:.5rem .65rem .6rem;
+    background:var(--bg-raised);
+    flex:1;
+  }
+  .ach-name {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.82rem; font-weight:700; letter-spacing:.5px;
+    color:var(--warm); line-height:1.15;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .ach-caption {
+    font-size:.65rem; color:var(--muted);
+    font-weight:300; letter-spacing:.3px;
+    margin-top:.2rem; line-height:1.3;
+    display:-webkit-box; -webkit-line-clamp:2;
+    -webkit-box-orient:vertical; overflow:hidden;
+  }
+
+  /* ─────────────────────────────────────────
+     SECTION 3 — GENERAL GALLERY
+  ───────────────────────────────────────── */
+  .gen-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2px;
+    padding:2px;
+  }
+  /* some tiles span 2 cols for visual variety */
+  .gen-tile {
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:var(--bg-card);
+  }
+  .gen-tile.wide { grid-column:span 2; }
+  .gen-tile.tall { aspect-ratio:1/1.2; }
+  .gen-tile:not(.wide) { aspect-ratio:1/1; }
+  .gen-tile.wide .gen-img-wrap { aspect-ratio:16/7; }
+
+  .gen-img-wrap {
+    width:100%; height:100%;
+    overflow:hidden;
+  }
+  .gen-img-wrap img {
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+    transition:transform .4s ease;
+  }
+  .gen-tile:active .gen-img-wrap img { transform:scale(1.05); }
+
+  /* caption overlay at bottom */
+  .gen-caption {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:.4rem .55rem .45rem;
+    background:linear-gradient(to top, rgba(10,5,3,0.88) 0%, transparent 100%);
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.68rem; color:var(--warm); letter-spacing:.4px;
+    font-style:italic; line-height:1.25;
+    pointer-events:none;
+  }
+  .gen-caption.hidden-caption { display:none; }
+
+  /* "Add photos" placeholder tiles */
+  .gen-placeholder {
+    aspect-ratio:1/1;
+    background:rgba(46,31,18,0.5);
+    border:2px dashed rgba(167,146,119,0.2);
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:.35rem;
+    cursor:default;
+  }
+  .gen-placeholder svg { opacity:.25; }
+  .gen-placeholder span {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.65rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--dim);
+  }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    padding:1.5rem 1rem; text-align:center;
+    border-top:1px solid rgba(167,146,119,0.1);
+    margin-top:1.5rem;
+  }
+  .footer-back-btn {
+    display:inline-flex; align-items:center; gap:.5rem;
+    text-decoration:none;
+    background:rgba(167,146,119,0.1);
+    border:1px solid rgba(167,146,119,0.25);
+    border-radius:8px; padding:.65rem 1.5rem;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.78rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--muted); transition:all .2s;
+  }
+  .footer-back-btn:active { background:rgba(167,146,119,0.2); color:var(--warm); }
+  .footer-note { font-size:.7rem; color:var(--dim); margin-top:.75rem; }
+
+  /* ── LIGHTBOX (shared) ── */
+  .lightbox {
+    display:none;
+    position:fixed; inset:0; z-index:200;
+    background:#0a0503;
+    flex-direction:column;
+  }
+  .lightbox.open { display:flex; }
+
+  .lb-bar {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.6rem 1rem; flex-shrink:0;
+    background:rgba(10,5,3,0.85);
+    border-bottom:1px solid rgba(167,146,119,0.1);
+  }
+  .lb-counter {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.75rem; letter-spacing:2px; color:var(--dim); text-transform:uppercase;
+    min-width:50px;
+  }
+  .lb-title-area { text-align:center; flex:1; padding:0 .5rem; }
+  .lb-main-name {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.1rem; letter-spacing:2px; color:var(--warm); line-height:1;
+  }
+  .lb-sub {
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.62rem; letter-spacing:2px; color:var(--gold); text-transform:uppercase;
+    margin-top:2px;
+  }
+  .lb-caption-bar {
+    font-family:'Barlow',sans-serif;
+    font-size:.68rem; color:var(--muted); font-style:italic;
+    letter-spacing:.3px; margin-top:3px; line-height:1.3;
+  }
+  .lb-close {
+    background:rgba(167,146,119,0.15);
+    border:1px solid rgba(167,146,119,0.3);
+    color:var(--warm);
+    width:36px; height:36px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1rem; cursor:pointer; transition:background .2s; flex-shrink:0;
+  }
+  .lb-close:active { background:rgba(167,146,119,0.3); }
+
+  .lb-zoom-wrap {
+    flex:1;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    position:relative;
+    touch-action:none;
+  }
+  .lb-img {
+    max-width:100%; max-height:100%;
+    object-fit:contain; display:block;
+    transition:opacity .2s ease;
+    user-select:none; -webkit-user-drag:none;
+    transform-origin:center center;
+    will-change:transform;
+  }
+  .lb-arrow {
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(26,15,8,0.7);
+    border:1px solid rgba(167,146,119,0.25);
+    color:var(--warm);
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:1.2rem;
+    transition:background .2s; z-index:2;
+  }
+  .lb-arrow:active { background:rgba(167,146,119,0.25); }
+  .lb-arrow.prev { left:.6rem; }
+  .lb-arrow.next { right:.6rem; }
+  .lb-arrow.hidden-arrow { opacity:0; pointer-events:none; }
+
+  .lb-zoom-hint {
+    position:absolute; bottom:.75rem; left:50%;
+    transform:translateX(-50%);
+    background:rgba(26,15,8,0.75);
+    border:1px solid rgba(167,146,119,0.2);
+    border-radius:20px;
+    padding:.35rem 1rem;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.65rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--dim); white-space:nowrap;
+    pointer-events:none;
+    animation:hintFade 3s ease 1s both;
+  }
+  @keyframes hintFade {
+    0%{opacity:0} 15%{opacity:1} 75%{opacity:1} 100%{opacity:0}
+  }
+  .lb-zoom-reset {
+    position:absolute; top:.6rem; left:.6rem;
+    background:rgba(167,146,119,0.2);
+    border:1px solid rgba(167,146,119,0.3);
+    border-radius:20px;
+    padding:.3rem .8rem;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.65rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--muted); cursor:pointer;
+    display:none; z-index:3;
+  }
+  .lb-zoom-reset.show { display:block; }
+
+  /* responsive */
+  @media(min-width:600px) {
+    .bb-grid { grid-template-columns:repeat(4,1fr); }
+    .achievements-grid { grid-template-columns:repeat(3,1fr); }
+    .gen-grid { grid-template-columns:repeat(3,1fr); }
+  }
+  @media(min-width:900px) {
+    .bb-grid { grid-template-columns:repeat(5,1fr); }
+    .achievements-grid { grid-template-columns:repeat(4,1fr); }
+    .gen-grid { grid-template-columns:repeat(4,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="index.html" class="header-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    Back
+  </a>
+  <div class="header-title">MALABAR <span>GALLERY</span></div>
+  <div style="width:48px"></div>
+</header>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <div class="hero-belt"></div>
+  <div>
+    <div class="hero-label">Malabar Martial & Sport Institute</div>
+    <div class="hero-heading">PHOTO<br>GALLERY</div>
+    <div class="hero-sub">Black belts, achievements & moments that matter.</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SECTION 1 — BLACK BELT GALLERY
+═══════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-icon">🥋</div>
+  <div>
+    <div class="section-label">Section 01</div>
+    <div class="section-title">BLACK BELT HALL</div>
+  </div>
+  <div class="section-count" id="bbCount">— Members</div>
+</div>
+
+<!--
+  HOW TO ADD BLACK BELT PHOTOS:
+  Copy one <div class="bb-tile"> block below and:
+  • Replace src="..." with your photo path  e.g. src="photos/ali.jpg"
+  • Replace data-name="..."  with the student's name
+  • Replace data-dan="..."   with their grade  e.g. "1st Dan"
+  • Replace the caption text inside .caption span
+  • Update the badge number (1st / 2nd / 3rd …)
+-->
+<div class="bb-grid" id="bbGrid">
+
+  <div class="bb-tile" data-name="Student Name" data-dan="1st Dan" data-caption="Achieved 2024" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">1st</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">Achieved 2024</span>
+    </div>
+  </div>
+
+  <div class="bb-tile" data-name="Student Name" data-dan="2nd Dan" data-caption="District champion" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">2nd</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">District champion</span>
+    </div>
+  </div>
+
+  <div class="bb-tile" data-name="Student Name" data-dan="3rd Dan" data-caption="10 years of training" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">3rd</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">10 years of training</span>
+    </div>
+  </div>
+
+  <div class="bb-tile" data-name="Student Name" data-dan="1st Dan" data-caption="Youngest black belt" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">1st</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">Youngest black belt</span>
+    </div>
+  </div>
+
+  <div class="bb-tile" data-name="Student Name" data-dan="4th Dan" data-caption="State level medal 2023" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">4th</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">State level medal 2023</span>
+    </div>
+  </div>
+
+  <div class="bb-tile" data-name="Student Name" data-dan="2nd Dan" data-caption="Instructor grade" onclick="openLb(this,'bb')">
+    <div class="bb-photo">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80" loading="lazy" alt="">
+      <div class="bb-dan-badge">2nd</div>
+    </div>
+    <div class="bb-name-bar">
+      <span class="name">Student Name</span>
+      <span class="caption">Instructor grade</span>
+    </div>
+  </div>
+
+</div>
+<!-- END BLACK BELT GRID -->
+
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 2 — STUDENT ACHIEVEMENTS
+═══════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-icon">🏆</div>
+  <div>
+    <div class="section-label">Section 02</div>
+    <div class="section-title">STUDENT ACHIEVEMENTS</div>
+  </div>
+  <div class="section-count" id="achCount">— Items</div>
+</div>
+
+<!--
+  HOW TO ADD ACHIEVEMENT PHOTOS:
+  Copy one <div class="ach-card"> block and:
+  • Replace src="..." with your photo path
+  • Replace data-name, data-badge, data-caption attributes
+  • Update .ach-badge text (e.g. "Gold Medal", "State", "District")
+  • Update .ach-name and .ach-caption text
+-->
+<div class="achievements-grid" id="achGrid">
+
+  <div class="ach-card" data-name="Student Name" data-badge="Gold Medal" data-caption="State Taekwondo Championship 2024 — Gold medal in under-60 kg category" onclick="openLb(this,'ach')">
+    <div class="ach-photo">
+      <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&q=80" loading="lazy" alt="">
+      <div class="ach-badge">Gold Medal</div>
+    </div>
+    <div class="ach-info">
+      <div class="ach-name">Student Name</div>
+      <div class="ach-caption">State Taekwondo Championship 2024 — Gold medal, under-60 kg</div>
+    </div>
+  </div>
+
+  <div class="ach-card" data-name="Student Name" data-badge="District" data-caption="District Karate Open 2023 — Bronze, kata event" onclick="openLb(this,'ach')">
+    <div class="ach-photo">
+      <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=400&q=80" loading="lazy" alt="">
+      <div class="ach-badge">District</div>
+    </div>
+    <div class="ach-info">
+      <div class="ach-name">Student Name</div>
+      <div class="ach-caption">District Karate Open 2023 — Bronze, kata event</div>
+    </div>
+  </div>
+
+  <div class="ach-card" data-name="Student Name" data-badge="National" data-caption="National Games 2024 — represented Kerala, judo 55 kg" onclick="openLb(this,'ach')">
+    <div class="ach-photo">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" loading="lazy" alt="">
+      <div class="ach-badge">National</div>
+    </div>
+    <div class="ach-info">
+      <div class="ach-name">Student Name</div>
+      <div class="ach-caption">National Games 2024 — represented Kerala, judo 55 kg</div>
+    </div>
+  </div>
+
+  <div class="ach-card" data-name="Student Name" data-badge="Silver" data-caption="Inter-school tournament 2023 — Silver, sparring" onclick="openLb(this,'ach')">
+    <div class="ach-photo">
+      <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=400&q=80" loading="lazy" alt="">
+      <div class="ach-badge">Silver</div>
+    </div>
+    <div class="ach-info">
+      <div class="ach-name">Student Name</div>
+      <div class="ach-caption">Inter-school tournament 2023 — Silver, sparring</div>
+    </div>
+  </div>
+
+</div>
+<!-- END ACHIEVEMENTS GRID -->
+
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 3 — GENERAL PHOTO GALLERY
+═══════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-icon">📸</div>
+  <div>
+    <div class="section-label">Section 03</div>
+    <div class="section-title">INSTITUTE GALLERY</div>
+  </div>
+  <div class="section-count" id="genCount">— Photos</div>
+</div>
+
+<!--
+  HOW TO ADD GENERAL PHOTOS:
+  Copy one <div class="gen-tile"> block and:
+  • Replace src="..." with your photo path
+  • Add class="wide" to make it span the full width (good for group/event shots)
+  • Update data-caption="..." for the overlay caption
+  • Delete placeholder tiles (<div class="gen-placeholder">) once you have enough photos
+-->
+<div class="gen-grid" id="genGrid">
+
+  <div class="gen-tile wide" data-caption="Annual black belt grading ceremony — 2024" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap" style="aspect-ratio:16/7">
+      <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=900&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Annual black belt grading ceremony — 2024</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Training session, main dojo" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Training session, main dojo</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Kata demonstration" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Kata demonstration</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Competition day, Kozhikode 2023" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Competition day, Kozhikode 2023</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Junior batch training" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Junior batch training</div>
+  </div>
+
+  <div class="gen-tile wide" data-caption="Inter-district tournament — Team MMSI 2023" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap" style="aspect-ratio:16/7">
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Inter-district tournament — Team MMSI 2023</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Sparring practice" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Sparring practice</div>
+  </div>
+
+  <div class="gen-tile" data-caption="Belt promotion ceremony" onclick="openLb(this,'gen')">
+    <div class="gen-img-wrap">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80" loading="lazy" alt="">
+    </div>
+    <div class="gen-caption">Belt promotion ceremony</div>
+  </div>
+
+  <!-- PLACEHOLDER TILES — delete these when you add real photos -->
+  <div class="gen-placeholder">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A79277" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span>Add Photo</span>
+  </div>
+
+  <div class="gen-placeholder">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A79277" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span>Add Photo</span>
+  </div>
+
+</div>
+<!-- END GENERAL GALLERY -->
+
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <a href="index.html" class="footer-back-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Main Site
+  </a>
+  <div class="footer-note">© 2026 Malabar Martial & Sport Institute</div>
+</footer>
+
+
+<!-- ══════════ SHARED LIGHTBOX ══════════ -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-bar">
+    <div class="lb-counter" id="lbCounter">1 / 1</div>
+    <div class="lb-title-area">
+      <div class="lb-main-name"  id="lbName"></div>
+      <div class="lb-sub"        id="lbSub"></div>
+      <div class="lb-caption-bar" id="lbCaption"></div>
+    </div>
+    <button class="lb-close" onclick="closeLb()">✕</button>
+  </div>
+
+  <div class="lb-zoom-wrap" id="lbZoomWrap">
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <button class="lb-arrow prev" id="lbPrev" onclick="navigate(-1)">‹</button>
+    <button class="lb-arrow next" id="lbNext" onclick="navigate(1)">›</button>
+    <div class="lb-zoom-hint">👌 Pinch to zoom</div>
+    <button class="lb-zoom-reset" id="lbZoomReset" onclick="resetZoom()">Reset Zoom</button>
+  </div>
+</div>
+
+
+<script>
+// ── COLLECT ALL TILES BY SECTION ──
+let allTiles = [], currentIndex = 0, currentSection = '';
+
+// zoom state
+let scale = 1, minScale = 1, maxScale = 4;
+let translateX = 0, translateY = 0;
+let lastTouchDist = 0, isPinching = false;
+let panStartX = 0, panStartY = 0;
+let panOriginX = 0, panOriginY = 0;
+let lastTap = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+  // count sections
+  document.getElementById('bbCount').textContent  = document.querySelectorAll('#bbGrid .bb-tile').length  + ' Members';
+  document.getElementById('achCount').textContent = document.querySelectorAll('#achGrid .ach-card').length + ' Items';
+  document.getElementById('genCount').textContent = document.querySelectorAll('#genGrid .gen-tile:not(.gen-placeholder)').length + ' Photos';
+  initZoom();
+});
+
+// ── OPEN LIGHTBOX ──
+function openLb(el, section) {
+  currentSection = section;
+  let selector;
+  if (section === 'bb')  selector = '#bbGrid  .bb-tile';
+  if (section === 'ach') selector = '#achGrid .ach-card';
+  if (section === 'gen') selector = '#genGrid .gen-tile:not(.gen-placeholder)';
+  allTiles = Array.from(document.querySelectorAll(selector));
+  currentIndex = allTiles.indexOf(el);
+  loadSlide(currentIndex);
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function loadSlide(idx) {
+  const el = allTiles[idx];
+  const img = el.querySelector('img');
+  const lbImg = document.getElementById('lbImg');
+
+  resetZoom();
+  lbImg.style.opacity = '0';
+  // try to load a larger version if it's an unsplash URL
+  lbImg.src = img.src.replace(/w=\d+/, 'w=900');
+  lbImg.onload = () => { lbImg.style.opacity = '1'; };
+
+  // name / sub / caption
+  if (currentSection === 'bb') {
+    document.getElementById('lbName').textContent    = el.dataset.name    || '';
+    document.getElementById('lbSub').textContent     = (el.dataset.dan    || '') + ' Black Belt';
+    document.getElementById('lbCaption').textContent = el.dataset.caption || '';
+  } else if (currentSection === 'ach') {
+    document.getElementById('lbName').textContent    = el.dataset.name    || '';
+    document.getElementById('lbSub').textContent     = el.dataset.badge   || '';
+    document.getElementById('lbCaption').textContent = el.dataset.caption || '';
+  } else {
+    document.getElementById('lbName').textContent    = '';
+    document.getElementById('lbSub').textContent     = '';
+    document.getElementById('lbCaption').textContent = el.dataset.caption || '';
+  }
+
+  document.getElementById('lbCounter').textContent = (idx+1) + ' / ' + allTiles.length;
+  document.getElementById('lbPrev').classList.toggle('hidden-arrow', idx === 0);
+  document.getElementById('lbNext').classList.toggle('hidden-arrow', idx === allTiles.length - 1);
+}
+
+function navigate(dir) {
+  if (scale > 1) return;
+  const next = currentIndex + dir;
+  if (next < 0 || next >= allTiles.length) return;
+  currentIndex = next;
+  loadSlide(currentIndex);
+}
+
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+  resetZoom();
+}
+
+// ── ZOOM ──
+function applyTransform() {
+  document.getElementById('lbImg').style.transform =
+    `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  document.getElementById('lbZoomReset').classList.toggle('show', scale > 1.05);
+  const zoomed = scale > 1.05;
+  document.getElementById('lbPrev').classList.toggle('hidden-arrow', zoomed || currentIndex === 0);
+  document.getElementById('lbNext').classList.toggle('hidden-arrow', zoomed || currentIndex === allTiles.length - 1);
+}
+
+function resetZoom() {
+  scale = 1; translateX = 0; translateY = 0; applyTransform();
+}
+
+function clampTranslate() {
+  const wrap = document.getElementById('lbZoomWrap');
+  const img  = document.getElementById('lbImg');
+  const ww = wrap.clientWidth, wh = wrap.clientHeight;
+  const iw = img.naturalWidth  || ww;
+  const ih = img.naturalHeight || wh;
+  const rendW = Math.min(ww, iw * (wh / ih));
+  const rendH = Math.min(wh, ih * (ww / iw));
+  const maxX = Math.max(0, (rendW * scale - ww) / 2);
+  const maxY = Math.max(0, (rendH * scale - wh) / 2);
+  translateX = Math.min(maxX, Math.max(-maxX, translateX));
+  translateY = Math.min(maxY, Math.max(-maxY, translateY));
+}
+
+function getTouchDist(t) {
+  const dx = t[0].clientX - t[1].clientX;
+  const dy = t[0].clientY - t[1].clientY;
+  return Math.sqrt(dx*dx + dy*dy);
+}
+
+function initZoom() {
+  const wrap = document.getElementById('lbZoomWrap');
+
+  wrap.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      isPinching = true;
+      lastTouchDist = getTouchDist(e.touches);
+      e.preventDefault();
+    } else if (e.touches.length === 1 && scale > 1) {
+      panStartX = e.touches[0].clientX;
+      panStartY = e.touches[0].clientY;
+      panOriginX = translateX; panOriginY = translateY;
+    }
+    const now = Date.now();
+    if (now - lastTap < 300 && e.touches.length === 1) {
+      if (scale > 1) { resetZoom(); } else { scale = 2.5; applyTransform(); }
+      e.preventDefault();
+    }
+    lastTap = now;
+  }, { passive: false });
+
+  wrap.addEventListener('touchmove', e => {
+    if (e.touches.length === 2 && isPinching) {
+      e.preventDefault();
+      const dist = getTouchDist(e.touches);
+      scale = Math.min(maxScale, Math.max(minScale, scale * (dist / lastTouchDist)));
+      lastTouchDist = dist;
+      clampTranslate(); applyTransform();
+    } else if (e.touches.length === 1 && scale > 1) {
+      e.preventDefault();
+      translateX = panOriginX + (e.touches[0].clientX - panStartX);
+      translateY = panOriginY + (e.touches[0].clientY - panStartY);
+      clampTranslate(); applyTransform();
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchend', e => {
+    if (e.touches.length < 2) isPinching = false;
+    if (scale < 1.05) resetZoom();
+    if (!isPinching && scale <= 1.05 && e.changedTouches.length === 1) {
+      const dx = e.changedTouches[0].clientX - panStartX;
+      if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    scale = Math.min(maxScale, Math.max(minScale, scale - e.deltaY * 0.003));
+    clampTranslate(); applyTransform();
+  }, { passive: false });
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape')     closeLb();
+  if (e.key === 'ArrowRight') navigate(1);
+  if (e.key === 'ArrowLeft')  navigate(-1);
+});
+</script>
+</body>
+</html>

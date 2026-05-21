@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malabar Karate & Sports Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MALABAR MARTIAL <span> AND SPORT INSTITUTE</span></div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-drawer" id="navDrawer">
+    <ul class="drawer-links">
+      <li><a href="#programs" onclick="closeMenu()">Programs</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#disciplines" onclick="closeMenu()">Disciplines</a></li>
+      <li><a href="#schedule" onclick="closeMenu()">Schedule</a></li>
+      <li><a href="#instructors" onclick="closeMenu()">Instructors</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+    <div class="drawer-form-section">
+      <div class="drawer-form-label">Free Trial Class</div>
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="d-name" placeholder="Your name" required>
+        <input type="tel" id="d-phone" placeholder="Phone number" required>
+        <select id="d-sport" required>
+          <option value="" disabled selected>Select a sport</option>
+          <option value="Karate">Karate</option>
+          <option value="Boxing & Kickboxing">Boxing & Kickboxing</option>
+          <option value="Taekwondo">Taekwondo</option>
+          <option value="Women's Self-Defense">Women's Self-Defense</option>
+          <option value="Judo & Grappling">Judo & Grappling</option>
+          <option value="MMA Fundamentals">MMA Fundamentals</option>
+        </select>
+        <button type="submit" class="drawer-submit">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-diagonal"></div>
+  <div class="kanji-bg">武</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Karate & Sports Academy</div>
+    <h1>FORGE<br>YOUR <span class="accent">SPIRIT</span></h1>
+    <p class="hero-sub">
+      Elite martial arts training for all ages and skill levels. Discipline, strength, and character — built on the mat, carried through life.
+    </p>
+    <div class="hero-buttons">
+      <a href="#programs" class="btn-primary">Explore Programs</a>
+      <a href="#contact" class="btn-ghost">Free Trial Class</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">20<span>+</span></div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1000<span>+</span></div>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50<span>+</span></div>
+      <div class="stat-label">Champions Produced</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-label">What We Offer</div>
+  <div class="section-title">Training <em>Programs</em></div>
+  <div class="programs-grid">
+    <div class="program-card">
+      <span class="program-icon">🥋</span>
+      <h3>Little Ninjas</h3>
+      <div class="program-age">Ages 4–7</div>
+      <p>A fun, energetic intro to martial arts. Children develop focus, coordination, respect, and confidence in a nurturing environment.</p>
+      <div class="program-belt">WHITE → YELLOW BELT</div>
+    </div>
+    <div class="program-card">
+      <span class="program-icon">⚡</span>
+      <h3>Junior Warriors</h3>
+      <div class="program-age">Ages 8–14</div>
+      <p>Structured karate curriculum combining technique, sparring drills, and character development through progressive belt ranks.</p>
+      <div class="program-belt">ALL BELT LEVELS</div>
+    </div>
+    <div class="program-card">
+      <span class="program-icon">🏆</span>
+      <h3>Adult Karate</h3>
+      <div class="program-age">Ages 15+</div>
+      <p>Full Shotokan curriculum for beginners through black belts. Kata, kumite, and self-defense with certified master instructors.</p>
+      <div class="program-belt">ALL BELT LEVELS</div>
+    </div>
+    <div class="program-card">
+      <span class="program-icon">🥊</span>
+      <h3>Combat Sports</h3>
+      <div class="program-age">All Ages</div>
+      <p>Boxing, kickboxing, and MMA fundamentals. Sport-focused training for competition preparation and fitness conditioning.</p>
+      <div class="program-belt">COMPETITION READY</div>
+    </div>
+    <div class="program-card">
+      <span class="program-icon">🏃</span>
+      <h3>Athletic Conditioning</h3>
+      <div class="program-age">Ages 12+</div>
+      <p>Sports-specific fitness: agility, strength, flexibility, and endurance training tailored for martial artists and athletes alike.</p>
+      <div class="program-belt">FITNESS TRACK</div>
+    </div>
+    <div class="program-card">
+      <span class="program-icon">🛡️</span>
+      <h3>Women's Self-Defense</h3>
+      <div class="program-age">Ages 16+</div>
+      <p>Practical self-defense techniques, situational awareness, and empowerment through proven real-world defense skills.</p>
+      <div class="program-belt">EMPOWERMENT SERIES</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <img class="about-img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80" alt="Karate training">
+    <div class="about-badge">
+      <div class="about-badge-num">6</div>
+      <div class="about-badge-text">Dan Black<br>Belt Sensei</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <div class="section-label">Our Story</div>
+    <div class="section-title">More Than <em>Martial Arts</em></div>
+    <p>Ryūsei Academy was founded in 2009 by Sensei Arjun Menon, a 6th Dan Black Belt trained in the Shotokan tradition under JKA Japan. What began as a small dojo has grown into one of the region's premier combat sports academies.</p>
+    <p>We believe that martial arts is a transformative discipline — one that builds not just physical strength but mental fortitude, emotional resilience, and a lifelong commitment to self-improvement. Every student who walks through our doors becomes part of our family.</p>
+    <p>Our state-of-the-art facility features 5,000 sq. ft. of mat space, a dedicated weights and conditioning gym, and a competition ring for sparring and sport training.</p>
+    <ul class="about-features">
+      <li>JKA Certified Curriculum</li>
+      <li>5,000 sq ft Training Hall</li>
+      <li>National Competition Team</li>
+      <li>Certified Safety Standards</li>
+      <li>Private Coaching Available</li>
+      <li>Flexible Membership Plans</li>
+      <li>Tournament Preparation</li>
+      <li>Character Development</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section id="disciplines">
+  <div class="section-label">Sports We Train</div>
+  <div class="section-title">Our <em>Disciplines</em></div>
+  <div class="disciplines-grid">
+    <div class="discipline-card">
+      <div class="discipline-num">01</div>
+      <h3>Shotokan Karate</h3>
+      <p>Traditional Japanese karate with deep emphasis on kata, kumite, and the way of the empty hand.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">02</div>
+      <h3>Kickboxing</h3>
+      <p>Dynamic striking art combining punches, kicks, and powerful footwork for sport and fitness.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">03</div>
+      <h3>Boxing</h3>
+      <p>The sweet science — head movement, combinations, defense, and ring strategy from the ground up.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">04</div>
+      <h3>Taekwondo</h3>
+      <p>Korean martial art renowned for high kicks, fast footwork, and explosive spinning techniques.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">05</div>
+      <h3>Judo & Grappling</h3>
+      <p>Throws, takedowns, and ground control — foundational grappling skills for sport and self-defense.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">06</div>
+      <h3>MMA Fundamentals</h3>
+      <p>Integrated striking and grappling for the complete combat athlete. Structured for all skill levels.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">07</div>
+      <h3>Yoga & Flexibility</h3>
+      <p>Complement your martial arts training with mobility, breathing, and mindfulness practice.</p>
+    </div>
+    <div class="discipline-card">
+      <div class="discipline-num">08</div>
+      <h3>Athletics & Fitness</h3>
+      <p>Sports conditioning, agility training, and functional fitness programs for the complete athlete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="section-label">Weekly Timetable</div>
+  <div class="section-title">Class <em>Schedule</em></div>
+  <div class="schedule-wrap">
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Monday / Wednesday / Friday</th>
+        <th>Tuesday / Thursday</th>
+        <th>Saturday</th>
+        <th>Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6:00 – 7:00 AM</td>
+        <td>Adult Karate (Advanced)</td>
+        <td>Boxing & Kickboxing</td>
+        <td>Open Mat</td>
+        <td><span class="badge badge-gold">Advanced</span></td>
+      </tr>
+      <tr>
+        <td>9:00 – 10:00 AM</td>
+        <td>Women's Self-Defense</td>
+        <td>Yoga & Flexibility</td>
+        <td>Junior Grading Prep</td>
+        <td><span class="badge badge-gray">All Levels</span></td>
+      </tr>
+      <tr>
+        <td>4:00 – 5:00 PM</td>
+        <td>Little Ninjas (Ages 4–7)</td>
+        <td>Little Ninjas (Ages 4–7)</td>
+        <td>Junior Warriors</td>
+        <td><span class="badge badge-gray">Beginners</span></td>
+      </tr>
+      <tr>
+        <td>5:00 – 6:30 PM</td>
+        <td>Junior Warriors (Ages 8–14)</td>
+        <td>MMA Fundamentals</td>
+        <td>Competition Sparring</td>
+        <td><span class="badge badge-red">Intermediate</span></td>
+      </tr>
+      <tr>
+        <td>7:00 – 8:30 PM</td>
+        <td>Adult Karate (All Belts)</td>
+        <td>Athletic Conditioning</td>
+        <td>—</td>
+        <td><span class="badge badge-gray">All Levels</span></td>
+      </tr>
+      <tr>
+        <td>8:30 – 10:00 PM</td>
+        <td>Competition Team Training</td>
+        <td>Taekwondo & Judo</td>
+        <td>—</td>
+        <td><span class="badge badge-gold">Team Only</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+  <div class="section-label">Our Coaches</div>
+  <div class="section-title">Meet the <em>Masters</em></div>
+  <div class="instructors-grid">
+    <div class="instructor-card">
+      <div class="instructor-img-wrap">
+        <img class="instructor-img" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&q=80" alt="Sensei Arjun Menon">
+      </div>
+      <div class="instructor-name">Sensei Arjun Menon</div>
+      <div class="instructor-title">Head Instructor · 6th Dan Black Belt</div>
+      <p class="instructor-bio">JKA-certified Shotokan master with 28 years of training. National gold medalist and former coach of the state karate team.</p>
+      <div class="belt-rank">
+        <div class="belt-strip" style="background:#1a1a1a;border:1px solid #444;"></div>
+        <div class="belt-strip" style="background:#C0192C;"></div>
+        <div class="belt-strip" style="background:#C0192C;"></div>
+        <div class="belt-strip" style="background:#C0192C;"></div>
+        <div class="belt-strip" style="background:#1a1a1a;border:1px solid #444;"></div>
+        <div class="belt-strip" style="background:#C0192C;"></div>
+      </div>
+    </div>
+    <div class="instructor-card">
+      <div class="instructor-img-wrap">
+        <img class="instructor-img" src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=600&q=80" alt="Coach Priya Nair">
+      </div>
+      <div class="instructor-name">Coach Priya Nair</div>
+      <div class="instructor-title">Kickboxing & Women's Self-Defense</div>
+      <p class="instructor-bio">Two-time national kickboxing champion and certified women's safety instructor. 12 years of competitive and coaching experience.</p>
+      <div class="belt-rank">
+        <div class="belt-strip" style="background:#D4A017;"></div>
+        <div class="belt-strip" style="background:#D4A017;"></div>
+        <div class="belt-strip" style="background:#D4A017;"></div>
+      </div>
+    </div>
+    <div class="instructor-card">
+      <div class="instructor-img-wrap">
+        <img class="instructor-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Coach Rahul Das">
+      </div>
+      <div class="instructor-name">Coach Rahul Das</div>
+      <div class="instructor-title">Boxing & Athletic Conditioning</div>
+      <p class="instructor-bio">Former amateur boxing champion with a background in sports science. Specializes in building elite combat athletes from the ground up.</p>
+      <div class="belt-rank">
+        <div class="belt-strip" style="background:#C0192C;"></div>
+        <div class="belt-strip" style="background:#1a1a1a;border:1px solid #444;"></div>
+        <div class="belt-strip" style="background:#C0192C;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="background: var(--charcoal);">
+  <div class="section-label">Academy Moments</div>
+  <div class="section-title">Achievement<em>Gallery</em></div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80" alt="Karate training">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&q=80" alt="Kickboxing session">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80" alt="Fitness training">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80" alt="Boxing practice">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80" alt="Group training">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80" alt="Martial arts competition">
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Student Stories</div>
+  <div class="section-title">Real <em>Results</em></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"My son was shy and lacked confidence. After six months at Ryūsei, I see a completely different child — focused, respectful, and proud of himself. The instructors are incredible with kids."</p>
+      <div class="testimonial-author">Deepa Krishnan</div>
+      <div class="testimonial-role">Parent of Junior Warrior student</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"I joined the adult karate class at 38 with zero experience. The environment is welcoming, the curriculum is structured, and I earned my first belt in 4 months. Best decision I've made."</p>
+      <div class="testimonial-author">Mohammed Salim</div>
+      <div class="testimonial-role">Adult Karate student, Yellow Belt</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"The Women's Self-Defense program gave me skills I use daily — not just physical techniques but awareness and confidence. Sensei Priya is an outstanding coach and mentor."</p>
+      <div class="testimonial-author">Ananya Pillai</div>
+      <div class="testimonial-role">Self-Defense Program Graduate</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact">
+  <div class="section-label">Begin Your Journey</div>
+  <h2>Your First Class is <br>On Us — <em style="font-style:normal;color:var(--gold-light)">Free.</em></h2>
+  <p>Sign up below and we'll reach out to schedule your complimentary trial session. No commitment required.</p>
+  <form class="form-row" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your name" required>
+    <input type="tel" id="phone" placeholder="Phone number" required>
+    <select id="sport" required>
+      <option value="" disabled selected>Select a sport</option>
+      <option value="Karate">🥋 Karate</option>
+      <option value="Boxing & Kickboxing">🥊 Boxing & Kickboxing</option>
+      <option value="Taekwondo">🦵 Taekwondo</option>
+      <option value="Women's Self-Defense">🛡️ Women's Self-Defense</option>
+      <option value="Judo & Grappling">🤼 Judo & Grappling</option>
+      <option value="MMA Fundamentals">⚔️ MMA Fundamentals</option>
+      <option value="Yoga & Flexibility">🧘 Yoga & Flexibility</option>
+      <option value="Athletics & Fitness">🏃 Athletics & Fitness</option>
+    </select>
+    <button type="submit" class="btn-white">Claim Free Class</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">RYŪ<span>SEI</span> ACADEMY</div>
+  <ul class="footer-links">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#instructors">Instructors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Ryūsei Karate & Sports Academy. All rights reserved.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
