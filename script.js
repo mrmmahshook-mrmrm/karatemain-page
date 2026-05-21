@@ -51,10 +51,10 @@ Name: ${name}
 Phone: ${phone}
 Sport: ${sport}`;
 
-  const whatsappNumber = "9746906878";
+  const whatsappNumber = "919061750885";
 
   const whatsappURL =
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-  window.open(whatsappURL, "_blank");
+  window.location.href = whatsappURL;
 }
