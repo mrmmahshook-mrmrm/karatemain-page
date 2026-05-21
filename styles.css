@@ -447,6 +447,7 @@
 
   .about-img {
     width: 100%;
+    border-radius: 5px;
     aspect-ratio: 4/5;
     object-fit: cover;
     display: block;
@@ -488,6 +489,11 @@
     color: var(--color-text-subtle);
     line-height: 1.8;
     margin-bottom: 1.2rem;
+  }
+
+  .about-content p span {
+    color: #ffff;
+    font-weight: 500;
   }
 
   .about-features {
