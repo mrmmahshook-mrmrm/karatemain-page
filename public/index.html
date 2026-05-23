@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malabar Martial & Sport Institute — Building Champions of Tomorrow</title>
+<meta name="description" content="Ultra-premium karate & martial arts academy in Kerala. Discipline, character, and championship training led by a 4th Dan Chief Instructor.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="MMASI Logo" class="nav-logo-img">
+    <span class="nav-logo-text-wrap">
+      <span class="nav-logo-text-desktop">MALABAR MARTIAL <span class="logo-arts">ARTS</span> &amp; <span class="logo-sports">SPORTS</span> INSTITUTE</span>
+      <span class="nav-logo-text-mobile">MMASI</span>
+      <span class="nav-logo-tag">Since 2005</span>
+    </span>
+  </a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-drawer" id="navDrawer">
+    <ul class="drawer-links">
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+      <li><a href="team.html" onclick="closeMenu()">Our Team</a></li>
+      <li><a href="associated.html" onclick="closeMenu()">Associated With</a></li>
+      <li><a href="#programs" onclick="closeMenu()">Training Programs</a></li>
+      <li><a href="gallery.html" onclick="closeMenu()">Gallery</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-social">
+      <div class="drawer-social-label">Follow Us</div>
+      <div class="drawer-social-links">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.56 3.5 12 3.5 12 3.5s-7.56 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.82.55 9.38.55 9.38.55s7.56 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="kanji-bg">武</div>
+
+  <div class="hero-content reveal fade-bottom">
+    <div class="hero-logo-center">
+      <img src="logo.png" alt="Malabar Martial Arts and Sports Institute Logo" class="hero-logo-img">
+    </div>
+    <div class="hero-eyebrow">Malabar Martial <span class="white">Arts & Sports</span> Institute</div>
+    <h1>BUILDING<br>CHAMPIONS OF<br><span class="accent">TOMORROW</span></h1>
+    <p class="hero-tagline">Through Discipline and Art.</p>
+    <p class="hero-sub">
+      Elite martial arts training for all ages and skill levels — where ancient tradition forges modern character, on the mat and beyond.
+    </p>
+    <div class="hero-buttons">
+      <a href="#programs" class="btn-primary">Explore Programs</a>
+      <a href="#contact" class="btn-ghost">Join Us</a>
+    </div>
+  </div>
+
+  <div class="hero-stats reveal fade-bottom delay-3">
+    <div class="stat-item">
+      <div class="stat-num">20<span>+</span></div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1000<span>+</span></div>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50<span>+</span></div>
+      <div class="stat-label">Champions Produced</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50<span>+</span></div>
+      <div class="stat-label">Black Belts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal fade-left">
+    <img class="about-img" src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80" alt="Cinematic Dojo Training">
+    <div class="about-badge">
+      <div class="about-badge-num" style="font-size: 2.5rem;">20+</div>
+      <div class="about-badge-text">Years of<br>Excellence</div>
+    </div>
+  </div>
+  <div class="about-content reveal fade-right delay-2">
+    <div class="section-label">The Path of Mastery</div>
+    <div class="section-title">OUR <em>LEGACY</em></div>
+    <p class="legacy-pull">A lineage of honor. A standard of excellence. A house built on the unbreakable bond between teacher and student.</p>
+    <p><span>Malabar Martial Arts & Sports Academy </span>is not just a training ground; it is a sanctuary where discipline meets excellence. Founded on the ancient principles of the martial way, we have been forging champions and building unbreakable character for over two decades.</p>
+    <p>Our philosophy transcends physical combat. We believe that true strength is cultivated from within. Through rigorous conditioning, unwavering focus, and deep respect for tradition, our students learn to conquer their own limitations and achieve mastery in all aspects of life.</p>
+    <p>Step onto the mat and join a lineage bound by honor. Whether you are taking your first steps or refining a lifetime of practice, our academy offers a timeless journey of self-discovery and unparalleled martial arts excellence.</p>
+    <ul class="about-features">
+      <li>Time-Honored Traditions</li>
+      <li>World-Class Facilities</li>
+      <li>National Competition Team</li>
+      <li>Character Development</li>
+      <li>Elite Coaching Staff</li>
+      <li>Community & Brotherhood</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission-vision">
+  <div class="mv-grid">
+    <div class="mv-card reveal fade-left">
+      <div class="mv-kanji">志</div>
+      <div class="section-label">Our Mission</div>
+      <h3 class="mv-title">To Forge Character<br><em>Through the Martial Way.</em></h3>
+      <p>We exist to develop disciplined, confident human beings — not merely fighters. Every kata, every drill, every bow is a deliberate step toward physical mastery, mental clarity, and moral courage. We commit to every student as a lifelong custodian of their growth.</p>
+    </div>
+    <div class="mv-card reveal fade-right delay-1">
+      <div class="mv-kanji">夢</div>
+      <div class="section-label">Our Vision</div>
+      <h3 class="mv-title">A Generation of Leaders<br><em>Carved from Tradition.</em></h3>
+      <p>To be South India's most respected institute of martial excellence — producing national-stage champions, principled instructors, and citizens whose presence elevates every room they enter. A legacy measured not in trophies, but in lives transformed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why-us">
+  <div class="section-label reveal fade-bottom">The MMASI Difference</div>
+  <div class="section-title reveal fade-bottom">Why <em>Choose Us</em></div>
+  <div class="why-grid">
+    <div class="why-card reveal fade-bottom delay-1">
+      <div class="why-num">01</div>
+      <div class="why-icon">🏅</div>
+      <h4>Master-Led Instruction</h4>
+      <p>Every class is supervised by a certified Dan-grade instructor — no rotating part-timers, no compromises on standards.</p>
+    </div>
+    <div class="why-card reveal fade-bottom delay-2">
+      <div class="why-num">02</div>
+      <div class="why-icon">🎯</div>
+      <h4>Proven Championship Track</h4>
+      <p>Over 50 champions produced at district, state and national level. A pipeline, not a promise.</p>
+    </div>
+    <div class="why-card reveal fade-bottom delay-3">
+      <div class="why-num">03</div>
+      <div class="why-icon">🕊️</div>
+      <h4>Character Before Technique</h4>
+      <p>Respect, humility, and discipline are non-negotiable. We graduate human beings — black belts are a by-product.</p>
+    </div>
+    <div class="why-card reveal fade-bottom delay-1">
+      <div class="why-num">04</div>
+      <div class="why-icon">📐</div>
+      <h4>Structured Belt Curriculum</h4>
+      <p>A clear, examinable path from white belt to black belt, with milestones, mentorship, and meaningful grading.</p>
+    </div>
+    <div class="why-card reveal fade-bottom delay-2">
+      <div class="why-num">05</div>
+      <div class="why-icon">🌐</div>
+      <h4>Multi-Discipline Exposure</h4>
+      <p>Karate, Boxing, Kickboxing, Judo, Kobudo, Kalari — one institute, the full spectrum of the martial way.</p>
+    </div>
+    <div class="why-card reveal fade-bottom delay-3">
+      <div class="why-num">06</div>
+      <div class="why-icon">🤝</div>
+      <h4>A Lifelong Brotherhood</h4>
+      <p>The dojo doesn't end at the door. Alumni, parents and students form one of Kerala's most loyal martial families.</p>
+    </div>
+  </div>
+
+<!-- INSTRUCTORS (SINGLE SENSEI) -->
+<section id="instructors">
+  <div class="section-label reveal fade-bottom">Head Instructor</div>
+  <div class="section-title reveal fade-bottom">THE <em>SENSEI</em></div>
+  <div class="sensei-hero reveal fade-bottom delay-1">
+    <div class="sensei-photo-wrap">
+      <div class="sensei-frame"></div>
+      <img class="sensei-main-photo" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=900&q=80" alt="Sensei Abdu Rahiman K">
+      <div class="sensei-badge">
+        <div class="sensei-badge-num">4<sup>th</sup></div>
+        <div class="sensei-badge-text">Dan<br>Black Belt</div>
+      </div>
+    </div>
+    <div class="sensei-info">
+      <div class="sensei-eyebrow">— Chief Instructor & Examiner</div>
+      <h3 class="sensei-name">Sensei Abdu<br>Rahiman <span>K</span></h3>
+      <div class="sensei-title">Nihon Shotokan Karate Association · Malappuram District Chief</div>
+      <p class="sensei-bio">
+        With over 20 years of relentless dedication to the martial arts, Sensei Rahiman holds a prestigious Fourth Dan Black Belt, attested by Grand Master Kancho Masaya Kohama of I.S.S.K. He serves as an A-Grade Karate Judge and Referee for the Kerala State and has personally mentored thousands of students.
+      </p>
+      <p class="sensei-bio">
+        His expertise spans multiple disciplines — Kick Boxing, Muay Boran, Kalari, and Okinawa Kobudo — woven into a singular pedagogy that produces both champions and gentlemen.
+      </p>
+      <div class="sensei-qualifications">
+        <div class="qual-item">
+          <span class="qual-icon">🎖️</span>
+          <div class="qual-text">20+ Years Experience</div>
+        </div>
+        <div class="qual-item">
+          <span class="qual-icon">⚖️</span>
+          <div class="qual-text">A-Grade State Referee</div>
+        </div>
+        <div class="qual-item">
+          <span class="qual-icon">🥋</span>
+          <div class="qual-text">Multi-Discipline Master</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-label reveal fade-bottom">What We Offer</div>
+  <div class="section-title reveal fade-bottom">Training <em>Programs</em></div>
+  <div class="programs-grid">
+    <div class="program-card reveal fade-bottom delay-1">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Little Ninjas Karate for Kids" loading="lazy">
+      </div>
+      <span class="program-icon">🥋</span>
+      <h3>Little Ninjas</h3>
+      <div class="program-age">Ages 4–7</div>
+      <p>A fun, energetic intro to martial arts. Children develop focus, coordination, respect, and confidence in a nurturing environment.</p>
+      <div class="program-belt">WHITE → YELLOW BELT</div>
+    </div>
+    <div class="program-card reveal fade-bottom delay-2">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=600&q=80" alt="Junior Warriors Karate Training" loading="lazy">
+      </div>
+      <span class="program-icon">⚡</span>
+      <h3>Junior Warriors</h3>
+      <div class="program-age">Ages 8–14</div>
+      <p>Structured karate curriculum combining technique, sparring drills, and character development through progressive belt ranks.</p>
+      <div class="program-belt">ALL BELT LEVELS</div>
+    </div>
+    <div class="program-card reveal fade-bottom delay-3">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&q=80" alt="Adult Karate Shotokan" loading="lazy">
+      </div>
+      <span class="program-icon">🏆</span>
+      <h3>Adult Karate</h3>
+      <div class="program-age">Ages 15+</div>
+      <p>Full Shotokan curriculum for beginners through black belts. Kata, kumite, and self-defense with certified master instructors.</p>
+      <div class="program-belt">ALL BELT LEVELS</div>
+    </div>
+    <div class="program-card reveal fade-bottom delay-1">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&q=80" alt="Combat Sports Boxing Kickboxing" loading="lazy">
+      </div>
+      <span class="program-icon">🥊</span>
+      <h3>Combat Sports</h3>
+      <div class="program-age">All Ages</div>
+      <p>Boxing, kickboxing, and MMA fundamentals. Sport-focused training for competition preparation and fitness conditioning.</p>
+      <div class="program-belt">COMPETITION READY</div>
+    </div>
+    <div class="program-card reveal fade-bottom delay-2">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Athletic Conditioning Fitness" loading="lazy">
+      </div>
+      <span class="program-icon">🏃</span>
+      <h3>Athletic Conditioning</h3>
+      <div class="program-age">Ages 12+</div>
+      <p>Sports-specific fitness: agility, strength, flexibility, and endurance training tailored for martial artists and athletes alike.</p>
+      <div class="program-belt">FITNESS TRACK</div>
+    </div>
+    <div class="program-card reveal fade-bottom delay-3">
+      <div class="program-thumb-wrap">
+        <img class="program-thumb" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Women Self Defense Empowerment" loading="lazy">
+      </div>
+      <span class="program-icon">🛡️</span>
+      <h3>Women's Self-Defense</h3>
+      <div class="program-age">Ages 16+</div>
+      <p>Practical self-defense techniques, situational awareness, and empowerment through proven real-world defense skills.</p>
+      <div class="program-belt">EMPOWERMENT SERIES</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="section-label reveal fade-bottom">Our Branches</div>
+  <div class="section-title reveal fade-bottom">Find <em>Us</em></div>
+  <div class="locations-grid">
+    <div class="location-card reveal fade-bottom delay-1">
+      <div class="loc-tag">Headquarters</div>
+      <h3>Malappuram <span>HQ</span></h3>
+      <div class="loc-divider"></div>
+      <p class="location-address">
+        <span class="loc-icon">📍</span> 123 Main Dojo Street, Malappuram, Kerala 676505
+      </p>
+      <a href="tel:+919746906878" class="location-phone">
+        <span class="loc-icon">📞</span> +91 97469 06878
+      </a>
+      <a href="https://maps.google.com/?q=Malappuram+Kerala" target="_blank" rel="noopener" class="btn-map">
+        <span>View on Map</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <div class="location-card reveal fade-bottom delay-2">
+      <div class="loc-tag">Branch</div>
+      <h3>Calicut <span>Branch</span></h3>
+      <div class="loc-divider"></div>
+      <p class="location-address">
+        <span class="loc-icon">📍</span> 45 Fitness Avenue, Calicut, Kerala 673001
+      </p>
+      <a href="tel:+919746906878" class="location-phone">
+        <span class="loc-icon">📞</span> +91 97469 06878
+      </a>
+      <a href="https://maps.google.com/?q=Calicut+Kerala" target="_blank" rel="noopener" class="btn-map">
+        <span>View on Map</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact">
+  <div class="section-label reveal fade-bottom">Begin Your Journey</div>
+  <h2 class="reveal fade-bottom delay-1">Your First Class is <br>On Us — <em style="font-style:normal;color:var(--gold-light)">Free.</em></h2>
+  <p class="reveal fade-bottom delay-2">Sign up below and we'll reach out to schedule your complimentary trial session. No commitment required.</p>
+
+  <div class="contact-details reveal fade-bottom delay-2">
+    <a href="tel:+919746906878" class="contact-detail-card">
+      <div class="contact-detail-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.37 12.37 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.37 12.37 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="contact-detail-label">Phone</div>
+      <div class="contact-detail-value">+91 97469 06878</div>
+    </a>
+    <a href="mailto:info@mmasi.in" class="contact-detail-card">
+      <div class="contact-detail-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="contact-detail-label">Email</div>
+      <div class="contact-detail-value">info@mmasi.in</div>
+    </a>
+    <div class="contact-detail-card">
+      <div class="contact-detail-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="contact-detail-label">Location</div>
+      <div class="contact-detail-value">Malappuram & Calicut, Kerala</div>
+    </div>
+  </div>
+
+  <form class="form-row reveal fade-bottom delay-3" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your name" required>
+    <input type="tel" id="phone" placeholder="Phone number" required>
+    <input type="text" id="place" placeholder="Place / Location" required>
+    <select id="sport" required>
+      <option value="" disabled selected>Select a sport</option>
+      <option value="Karate">🥋 Karate</option>
+      <option value="Boxing & Kickboxing">🥊 Boxing & Kickboxing</option>
+      <option value="Taekwondo">🦵 Taekwondo</option>
+      <option value="Women's Self-Defense">🛡️ Women's Self-Defense</option>
+      <option value="Judo & Grappling">🤼 Judo & Grappling</option>
+      <option value="MMA Fundamentals">⚔️ MMA Fundamentals</option>
+      <option value="Yoga & Flexibility">🧘 Yoga & Flexibility</option>
+      <option value="Athletics & Fitness">🏃 Athletics & Fitness</option>
+    </select>
+    <button type="submit" class="btn-gold">Join Us</button>
+  </form>
+
+  <div class="contact-social reveal fade-bottom delay-3">
+    <div class="contact-social-label">Follow Us</div>
+    <div class="contact-social-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.56 3.5 12 3.5 12 3.5s-7.56 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.82.55 9.38.55 9.38.55s7.56 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MALABAR MARTIAL <span class="logo-arts">ARTS</span> &amp; <span class="logo-sports">SPORTS</span> INSTITUTE<div class="footer-logo-tag">Since 2005</div></div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="associated.html">Associated With</a></li>
+    <li><a href="#programs">Training Programs</a></li>
+    <li><a href="#locations">Our Branches</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.56 3.5 12 3.5 12 3.5s-7.56 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.82.55 9.38.55 9.38.55s7.56 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Malabar Martial & Sport Institute. All rights reserved.</div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
